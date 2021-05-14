@@ -10,7 +10,7 @@ const searchCont = document.querySelector('.search-container');
 
 fetch('https://randomuser.me/api/?results=12&nat=br&lego')
     .then(response => response.json())
-    .then(data => generateImage(data));
+    .then(data => generateProfile(data.results));
     //.then(data => console.log(data.results[0].gender));
     
 
@@ -18,10 +18,17 @@ fetch('https://randomuser.me/api/?results=12&nat=br&lego')
 //HELPER FUNCTIONS
 //-----------------------------
 
-function generateImage(data){
-    const html =`
+function generateProfile(data){
+
+    const cards = data.map( profile =>`
+    <img src='${profile.picture.medium}' alt>
+    <p> CLick to view ${profile.name.first} ${profile.name.last}</p>
+    ` );
+
+  /*  const html =`
     <img src='${data.results[0].picture.medium}' alt>
     <p> CLick to view ${data.results[0].name.first} ${data.results[0].name.last}</p>
     `;
-    gallery.innerHTML = html;
+    */
+    gallery.innerHTML = cards;
 }
