@@ -48,8 +48,9 @@ function generateProfile(data){
         })
     }
 }
+
 /**
- * Create the modal card with the profile clicked
+ * Create the modal card when a profile is clicked
  * @param {object} data - from fetch
  */
 
@@ -94,4 +95,21 @@ function showModal(data){
     });
 
 }
+
+//-----------------------------
+//SEARCH FUNCTION
+//-----------------------------
+let search =`
+<form action="#" method="get">
+<input type="search" id="search-input" class="search-input" placeholder="Search...">
+<input type="submit" value="&#x1F50D;" id="search-submit" class="search-submit">
+</form>`;
+
+searchCont.insertAdjacentHTML('beforeend', search);
+
+const submit = document.getElementById('search-submit');
+
+submit.addEventListener('click', (e)=>{
+     console.log("Searching ...");
+});
 
