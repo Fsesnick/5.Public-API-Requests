@@ -9,8 +9,7 @@ const searchCont = document.querySelector('.search-container');
 fetch('https://randomuser.me/api/?results=12&nat=br&lego')
     .then(response => response.json())
     .then(data => {
-        generateProfile(data.results)// Extract just the results from response         
-        
+        generateProfile(data.results)// Extract just the results from response       
     }); 
    
     
