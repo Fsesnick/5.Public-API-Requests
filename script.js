@@ -63,7 +63,7 @@ function showModal(data){
     const day = date.getDate();
     const year = date.getFullYear();
     const birthday = `${month}/${day}/${year}`;
-    
+
     //https://www.w3schools.com/jsref/jsref_substring.asp
     let phone = data.phone.toString();
     phone = phone.substring(0,5)+' '+phone.substring(6,);
@@ -84,10 +84,13 @@ function showModal(data){
         </div>
         `;
     body.insertAdjacentHTML('beforeend', modal);
-    //event listener for the close btn of the modal
+   
+	const modalContainer = document.querySelector('.modal-container');
+    //event handlers for the close btn of the modal
     const closeBtn = document.querySelector('#modal-close-btn');
     closeBtn.addEventListener('click', (e)=>{
         console.log("close  btn");
+        modalContainer.remove();
     });
 
 }
