@@ -1,3 +1,7 @@
+//  Unit 5 Project 
+// Fernanda Sesnick
+// Aiming for: Meets Expectations
+
 const body=document.querySelector('body');
 const gallery = document.getElementById('gallery');
 const searchCont = document.querySelector('.search-container');
