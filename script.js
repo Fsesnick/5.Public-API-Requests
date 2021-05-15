@@ -63,6 +63,10 @@ function showModal(data){
     const day = date.getDate();
     const year = date.getFullYear();
     const birthday = `${month}/${day}/${year}`;
+    
+    //https://www.w3schools.com/jsref/jsref_substring.asp
+    let phone = data.phone.toString();
+    phone = phone.substring(0,5)+' '+phone.substring(6,);
 
     let modal=`
         <div class="modal-container">
@@ -72,7 +76,7 @@ function showModal(data){
                 <img class="modal-img" src="${data.picture.large}" alt="profile picture"> 
                 <h3 id="name" class="modal-name cap">${data.name.first} ${data.name.last} </h3>
                     <p class="modal-text">${data.location.city}</p> 
-                    <p class="modal-text cap"> ${data.phone}</p>  <hr>
+                    <p class="modal-text cap"> ${phone}</p>  <hr>
                     <p class="modal-text">${data.location.street.number} ${data.location.street.name} ${data.location.city} </p>
                     <p class="modal-text">${data.location.state} ${data.location.postcode} </p>
                     <p class="modal-text"> Birth date: ${birthday} </p>
